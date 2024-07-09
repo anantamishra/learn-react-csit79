@@ -1,17 +1,13 @@
-.main-div {
-  display: flex;
-  gap: 20px;
-  width: 100%;
-  background-color: pink;
-  min-height: 100vh;
+/* .color-change-btn {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 5px;
 }
-.div1 {
-  width: 50%;
-}
-.div2 {
-  width: 50%;
-}
-h1 {
-  font-size: 50px;
-  font-weight: 500;
-}
+
+.color-change-btn.clicked {
+  background-color: green;
+} */

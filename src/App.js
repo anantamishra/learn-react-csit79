@@ -1,32 +1,37 @@
 import React, { useState } from 'react';
+import './App.css';
 
-export default function App() {
-  const [value1, setValue1] = useState('');
-  const [value2, setValue2] = useState('');
-  const [result, setResult] = useState('');
+function App() {
+  const [activeButton, setActiveButton] = useState(null);
+  const [value, setValue] = useState(0);
 
-  function handleChange1(e) {
-    setValue1(e.target.value);
-  }
-  function handleChange2(e) {
-    setValue2(e.target.value);
-  }
-  function add() {
-    setResult(Number(value1) + Number(value2))
-  }
-
+  const handleClick = (buttonId) => {
+    setActiveButton(buttonId);
+    if (activeButton === "add") {
+      setValue(value + 1);
+    }
+    else if (activeButton === "subtract") {
+      setValue(value - 1);
+    }
+  };
 
   return (
-    <div className='flex w-full min-h-screen justify-center items-center flex-col gap-5'>
-      <div className='flex gap-5'>
-        <input value={value1} onChange={handleChange1} className='border-black border-2 rounded px-4 py-2' />
-        <input value={value2} onChange={handleChange2} className='border-black border-2 rounded px-4 py-2' />
-      </div>
-      <button onClick={add} className='px-4 py-2 bg-blue-600 rounded text-white'>
+    <div className="justify-center flex items-center min-h-screen w-full gap-5">
+      <button
+        className={` px-5 py-4 rounded-lg ${activeButton === 'add' ? 'bg-red-500' : 'bg-emerald-300'}`}
+        onClick={() => handleClick('add')}
+      >
         Add
       </button>
-      <p>{result}</p>
+      <button
+        className={` px-5 py-4 rounded-lg ${activeButton === 'subtract' ? 'bg-red-500' : 'bg-emerald-300'}`}
+        onClick={() => handleClick('subtract')}
+      >
+        Subtract
+      </button>
+      <h1>{value}</h1>
     </div>
   );
 }
 
+export default App;
