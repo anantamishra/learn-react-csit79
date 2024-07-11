@@ -48,6 +48,8 @@ function Component5() {
       <h1>Component 5</h1>
       <h2>{`Hello ${user} again!`}</h2>
       <button className="border border-2 bg-red-500 text-white text-lg p-2">Click me</button>
+
+      <input type="text" className="focus:outline-none bg-red-900/50 border-black border rounded focus:border-blue-500 focus:bg-blue-300" />
     </>
   );
 }
