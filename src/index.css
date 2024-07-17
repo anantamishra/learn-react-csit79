@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.red {
-  background-color: red;
-  color: white;
+.button {
+  @apply bg-white p-4 rounded-lg shadow-md text-xl font-semibold text-gray-800 hover:bg-gray-100;
 }

@@ -5,6 +5,7 @@ function TODO() {
     const [tasks, setTasks] = useState([]);
     const [newTask, setNewTask] = useState('');
 
+
     const addTask = () => {
         if (newTask.trim()) {
             setTasks([...tasks, { text: newTask, completed: false }]);
@@ -21,6 +22,9 @@ function TODO() {
 
     return (
         <div className='flex min-h-screen w-full justify-center items-center flex-col'>
+            <pre>
+                {JSON.stringify(tasks, 0, 2)}
+            </pre>
             <div className='p-10 shadow rounded border flex flex-col gap-2'>
                 <h1 className='font-bold'>TO DOs</h1>
                 <div className='flex gap-2'>
