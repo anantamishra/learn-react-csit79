@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 export default function QuizApp() {
     const [quizs, setQuizs] = useState([]);
+    const options = [];
     const url = "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple";
 
 
@@ -23,6 +24,16 @@ export default function QuizApp() {
 
         fetchQuiz();
     }, []);
+
+    // todo: this logic to be implemented
+    // options.push(quizs.correct_answer);
+    // quizs.incorrect_answers.map(incorrectAnswer => {
+    //     options.push(incorrectAnswer);
+    // });
+
+    // options.sort(() => Math.random() - 0.5);
+    // console.log(options)
+
 
     return <div>
         {quizs.map((quiz, index) => (
