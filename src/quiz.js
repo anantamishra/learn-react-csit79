@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function QuizApp() {
     const [quizs, setQuizs] = useState([]);
+    const [result, setResult] = useState(null);
     let options = [];
     const url = "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple";
 
@@ -32,16 +33,30 @@ export default function QuizApp() {
         fetchQuiz();
     }, []);
 
+    function handleButonClick(e) {
+        if (condition) {
+            // statement
+        }
+        else {
+            // statement
+        }
+    }
     return (
-        <div>
+        <div className="flex flex-col gap-5 p-5">
+            <h1 className="text-xl font-bold w-full flex justify-center">Quiz App</h1>
             {quizs.map((quiz, index) => (
-                <div key={index}>
-                    <h3>Question: {quiz.question}</h3>
-                    <ul>Options:
+                <div key={index} className="shadow-lg border p-5 rounded gap-4 flex flex-col">
+                    <h3 className="font-semibold">Question: {quiz.question}</h3>
+                    <div className="grid grid-cols-2 gap-2">
                         {quiz.options.map((option, idx) => (
-                            <li key={idx}>{option}</li>
+                            <div>
+                                <input type="radio" key={idx} id={option} value={option} />
+                                <label for={option}>{option}</label>
+                            </div>
                         ))}
-                    </ul>
+                    </div>
+                    <p>{result}</p>
+                    <button className="bg-blue-500 text-white py-1" onClick={handleButonClick}> Submit</button>
                     <p>correct_answer: {quiz.correct_answer}</p>
                 </div>
             ))}
