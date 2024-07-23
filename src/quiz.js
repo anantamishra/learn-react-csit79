@@ -36,6 +36,7 @@ export default function QuizApp() {
             [quiz.question]: selectedOption
         });
     };
+    console.log(selectedAnswers)
 
     const handleButtonClick = (quiz) => {
         const selectedAnswer = selectedAnswers[quiz.question];
