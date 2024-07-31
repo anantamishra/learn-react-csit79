@@ -1,8 +1,9 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import TODO from './todo'
 import CalculatorApp from './calculator'
 import QuizApp from './quiz'
+import TODO from './todo'
+import CommentPage from './comment'
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <Route path="/" element={<TODO />}></Route>
       <Route path="/calculator" element={<CalculatorApp />}></Route>
       <Route path="/quiz-app" element={<QuizApp />}></Route>
+      <Route path="/comment-app" element={<CommentPage />}></Route>
     </Routes >
   )
 }
