@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import starIcon from './assets/staricon.png'
+
+
 function CommentPage() {
     const [name, setName] = useState('');
     const [rating, setRating] = useState(0);
@@ -59,7 +60,6 @@ function CommentPage() {
                 {sections.map((section, index) => (
                     <div key={index} className="p-4 border border-gray-300 rounded">
                         <h3 className="text-lg font-semibold">{section.name}</h3>
-                        <img src={starIcon} alt='' />
                         <p className="text-yellow-500">{renderStars(section.rating)}</p>
                         <p className="text-gray-600">{section.description}</p>
                     </div>
